@@ -1,0 +1,970 @@
+/* CSS Reset */
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* CSS Variables */
+:root{
+    --navbar-height:59px;
+}
+body{
+    max-width: 100%;
+    overflow-x: hidden ;
+    /* overflow:hidden ; */
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    /* background-image: url('../img/bg2.jpg '); */
+}
+/* Navigation Bar: */
+#navbar{
+    /* border: 2px solid white; */
+    width: 100%;
+    position: relative;
+    top: 0px;
+    /* margin-left: 220px; */
+    padding-left: 200px;
+    display: flex; /*gets items in a rom*/
+    align-items: center; /*to get everything in the center we use justify:center*/;
+    /* position: sticky ;
+    top: 0px; */
+    overflow: hidden;
+    position: fixed;
+    /* background-color: rgb(224, 175, 175); */
+
+}
+#navbar::before{ /*makes the changes before the content*/
+    content: ""; /*empty content*/
+    background-color: rgb(65, 2, 238);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 90%;
+    width: 100%;/**/
+    z-index: -1;/*will bring my content on top of the bg*/
+    opacity: 0.1 ;/*makes the bg opaque.*/
+    
+}
+
+/* Navigation Bar:Logo and images */
+#logo{
+    margin: 10px 71px;
+    font-size: 34px;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    /* border:4px rgb(253, 251, 251) solid ; */
+}
+
+/* Navigation Bar:list item styling */
+#navbar ul{
+    display: flex;
+    font-family: 'Anton', sans-serif;
+    margin-left: 100px;
+
+}
+
+#navbar ul li{
+    list-style: none;
+    font-size: 1.0rem;
+    margin-left: 15px;
+    
+}
+#navbar ul li a{
+    color: black;
+    display: block;
+    padding: 3px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    
+}
+#navbar ul li a:hover{
+    color: rgb(236, 232, 22);
+    
+}
+
+/* Home Section */
+
+
+#home{
+   display: flex;
+   flex-direction: column; /*bring the content again into a column*/ 
+   padding: 3px 200px;
+   height: 320px;
+   justify-content: center;
+   align-items: center; 
+   width: 550px;
+   margin-bottom: 250px;
+   margin-top: 180px;
+}
+
+
+#home::before{
+    content: ""; 
+    background: url('../img/bg2.jpg') no-repeat center center/cover;  
+    height: 615px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.89 ;
+    background-size: cover;
+    background-position: center;
+    transition: 5s;
+
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+
+} 
+@keyframes animate{
+    0%{
+        background-image: url('../img/bg2.jpg');
+    }
+    20%{
+        background-image: url('../img/bg4.jpg');
+    }
+    40%{
+        background-image: url('../img/bg3.jpg');
+    }
+
+}
+
+
+ #home h1{
+    color: rgb(250, 249, 249);
+    text-align: center;
+    font-family: 'Bree Serif' , serif;
+    margin-left: 60px;
+ }
+ #home p{
+    color: rgb(248, 244, 244);
+    text-align: center;
+    font-size: 1.5rem; /*rem = relative to markup*/
+    font-family: 'Bree Serif' , serif;
+    margin-left: 52px;
+    padding: 3px 15px;
+}
+
+#btn-container .btn{
+    border: 2px solid rgb(236, 232, 22);
+    background-color: rgb(236, 232, 22);
+    color: rgb(7, 7, 7);
+}
+
+ /* Welcome Section */
+#welcome-container{
+    margin:34px ;
+    display: flex;
+    /* padding: 50px ; */
+
+}
+.welcome-container .intro-head{
+    /* display: flex; */
+    /* border: 2px solid red; */
+    padding: 10px;
+    margin: 10px auto;
+    margin-top: -35px;
+    font-size: 30px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+#intro{
+    /* border: 3px solid blue; */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 34px;
+    margin-left: 300px;
+    margin-top: 0px;
+    width: 50%;
+    height: 120px;
+    margin-bottom: 35px;
+    
+}
+
+#intro .para{
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    /* font-family: 'Scheherazade New', serif; */
+    color: rgb(211, 97, 226);
+    padding: 0px 0px;
+    margin-top: 34px;
+    margin-bottom: 40px;
+}
+#intro .icon img{
+    height: 160px;
+    width: 130px;
+    opacity: 0.4;
+    padding: 20px 60px;
+    margin-top: 20px;
+    
+}
+
+/* Boxes Section */
+
+/* box-icon container */
+
+.welcome-container #box-icon{
+    height: 400px;
+    width: 50%;
+    /* border: 3px solid pink; */
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 10px;
+    margin: auto;
+    margin-bottom: 70px;
+
+}
+
+/* box-icon items */
+#box-icon .bell,.message,.icon3{
+    width: 400px;
+    height: 335px;
+    background-color: white;
+    /* border: 2px solid tomato; */
+    margin: 25px 10px;
+    padding: 10px;
+    order: 2;
+    /* font-size: 15px;   */
+
+}
+#box-icon .bell:hover,.message:hover,.icon3:hover{
+    border: 2px solid rgb(211, 97, 226) ;
+    border-radius: 4px;
+    
+
+}
+#box-icon .info p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    color:rgb(211, 97, 226) ;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    text-align: center;
+}
+#box-icon img{
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: auto;
+    height: 80px;
+    width: auto;
+}
+
+/* Box-icon Buttons */
+.bttn{
+    border:2px solid rgb(236, 232, 22); 
+    background-color:rgb(236, 232, 22); 
+    color:black;
+    display: flex;
+    margin: auto;
+}
+
+
+/* Project Section */
+.project-container{
+    height: 625px;
+    width: 100%;
+    /* border: 2px solid rgb(235, 95, 95); */
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+
+}
+.project{
+    width: 350px;
+    height: 440px;
+    /* border: 2px solid tomato; */
+    margin: 0px 0px;
+    padding: 0px;
+    
+}
+#project1:hover{
+    border: 2px solid black;
+    height: 625px;
+    
+}
+#project2:hover{
+    border: 2px solid black;
+    height: 625px;
+    
+}
+#project3:hover{
+    border: 2px solid black;
+    height: 625px;
+    
+}
+#project4:hover{
+    border: 2px solid black;
+    height: 625px;
+    
+}
+.project-container img{
+    height: 350px;
+    width: 100%;
+}
+.project-container .heading{
+    /* border: 2px solid rgb(39, 39, 196); */
+    padding: 15px;
+    margin: 0px 11px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+
+}
+
+.data{
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:gray ;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    padding: 7px;
+    margin: 0px 20px;
+    /* border: 2px solid pink; */
+    
+}
+.project-container .info{
+    padding: 10px 0px;
+    /* border: 2px solid green; */
+    height: 250px;
+    background-color: rgb(236, 233, 233);
+}
+.project-container .info:hover, .info.bttn1:hover{
+    color:gray ;
+    cursor: pointer;
+    background-color: rgb(247, 247, 39);
+}
+.button-container .btn{
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 25px;
+    margin: 15px 25px ;
+    font-size: 13px;
+    border-radius: 3px;
+    background-color: white;
+    border:1px solid white;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+.button-container .btn:hover{
+    background-color:rgb(100, 11, 117);
+    color: white;
+
+}
+
+
+/* Pricing Section */
+.pricing-container{
+    height: 244px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid yellow; */
+    font-size: 10px; 
+    color: rgb(75, 9, 138);
+    padding: 12px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    justify-content: center;
+    
+}
+.pricing{
+    height: 244px;
+    text-align: center;
+    margin: 3px 10px;
+    margin-top: -5px;
+    padding: 3px;
+    width: 15%;
+    justify-content: center;
+    
+}
+.pricing:hover{
+    border: 2px solid black;
+    border-radius: 5%;
+
+}
+.pricing .First.head{
+    padding: 10px;
+    color:black;
+    
+}
+
+.Second.head{
+    padding: 3px;
+    color:gray
+    
+}
+.pricing .data{
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+.pricing .bttn{
+    border: 2px solid black;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 45px;
+    margin: 15px 37px ;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+
+/* Video Projects Section */
+.vp-container{
+    height: 544px;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(86, 32, 136) ;
+    margin-bottom: 60px;
+}
+.videos-column{
+    /* border: 2px solid white; */
+    height: 400px;
+}
+.video-head{
+    text-align: center;
+    height: 95px;
+    width: 100%;
+    padding: 0px 0px;
+    color: white;
+    font-family:'Ubuntu', sans-serif; 
+}
+
+#vid1{
+    height: 244px;
+    width: 500px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    margin-top: 60px;
+    margin-left: 55px;
+    float: left;
+}
+#vid2{
+    height: 244px;
+    width: 500px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 20px;
+    margin-top: 27px;
+    margin-right: 55px;
+    float: right;
+}
+
+#vid1:hover, #vid2:hover{
+    box-shadow: 0 8px 12px 0 rgba(0,0,0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vp-container h4{
+    display: inline-block;
+    color: white;
+    margin: 0px;
+    margin-bottom: 5px;
+    padding-top:15px;
+    
+}
+.vp-container h4:hover{
+    border: 5px solid black;
+    cursor: pointer;
+
+}
+
+
+
+/* Zippy Team Section */
+
+.members-container{
+    height: 525px;
+    width: 70%;
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+}
+.member{
+    height: 250px;
+    width: 260px;
+    /* border: 2px solid rgb(30, 181, 207); */
+    font-family:'Ubuntu', sans-serif ;
+    text-align: center;
+} 
+
+.member img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: auto;
+    height: 140px;
+
+}
+.member img:hover{
+    /* background-color:rgb(86, 32, 136) ; */
+    cursor: pointer;
+    opacity: 0.4;
+    color: rgb(86, 32, 136);
+    
+}
+.member .hoverImg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    transition: 0.5s;
+
+}
+.member:hover .hoverImg{
+    opacity: 1;
+}
+.member  img{
+    border-radius: 50%;
+    width: 53%;
+    transition: 0.5s;
+}
+.member:hover  img{
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.member .name{
+    /* margin: auto; */
+    margin-top: 25px;
+}
+.member .designation{
+    margin: 10px;
+    /* border: 2px solid peachpuff; */
+    color: rgb(163, 161, 161);
+    font-family: 'Roboto Slab', serif;;
+    
+}
+
+
+/* Life in Zippy */
+#zippy-container{
+    /* border: 2px solid tomato; */
+    height: 620px;
+    width: 1200px;
+    background-color: rgb(231, 227, 227);
+    padding: 30px ;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    
+}
+#zippy-container .h-primary{
+    margin: 20px;
+    /* border: 2px solid blue; */
+    padding: 0px 20px;
+    padding-top: 0px;
+}
+#photo-container{
+    /* border: 2px solid purple; */
+    height: 544px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding-top: 160px;
+}
+.image {
+    /* border: 2px solid black; */
+    display: inline-block;
+    width: 150px;
+    height: 144px;
+    padding: 0px;
+}
+
+img {
+    width: 90%;
+    height: 80%;
+    display: inline-block;
+}
+#modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* Newsletter Signup Section */
+#newsletter-container{
+    /* border: 2px solid black; */
+    height: 344px;
+    width: 100%;
+    font-family:'Ubuntu', sans-serif ;
+    background:url('../img/newletter_signup.jpg') no-repeat center center/cover;
+    color: white;
+    margin-bottom: 60px;
+}
+#signup-container{
+    /* border: 3px solid yellow; */
+    height: 60px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding:px; */
+    
+}
+#signup-container input{
+    /* border: 2px solid violet; */
+    border: 2px solid white;
+    border-radius: 4px;
+    height: 40px;
+    width: 50%;
+    padding: 4px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family:'Ubuntu', sans-serif ;
+    color: rgba(7, 6, 6, 0.904);
+    
+}
+#signup-container #button{
+    /* border: 2px solid rgb(180, 70, 180); */
+    border: 2px solid rgb(236, 232, 22);
+    border-radius: 4px;
+    height: 50px;
+    width: 15%;
+    padding: 10px;
+    font-family:'Ubuntu', sans-serif ;
+    background-color: rgb(236, 232, 22);
+    font-size: 15px;
+}
+#signup-container #button:hover{
+    /* border: 2px solid rgb(180, 70, 180); */ 
+    border: 2px solid rgb(75, 9, 138);
+    background-color: rgb(75, 9, 138);
+    color: white;
+}
+
+
+/* Blogs Section */
+
+#blog .h-primary{
+    /* border: 2px solid blue; */
+    padding:60px 0px 45px ;
+}
+#blog-container{
+    /* border: 2px solid tomato; */
+    height: 560px;
+    width: 100%;
+}
+.blogs{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 75%;
+    height: 550px;
+    /* border: 2px solid pink; */
+    /* justify-content: space-between; */
+}
+.blog{
+    height: 500px;
+    width: 40%;
+    /* border: 2px solid black; */
+    padding: 5px;
+    margin: 23px;
+    margin-top: 0px;
+}
+.blog:hover{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.blog .h-secondary{
+    /* border: 2px solid black; */
+    margin-bottom: 0px;
+    padding: 10px;
+    font-size: 1.0rem;
+    color: black;
+    width: 90%;
+
+    
+}
+h4{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color:rgba(211, 199, 199, 0.904) ;
+    margin: auto;
+    padding: 9px;
+}
+.blog .info{
+    font-family: 'Mukta', sans-serif;
+    font-size: 17px;
+    text-align:center;
+    font-weight: bold;
+    color:rgb(48, 45, 45);
+}
+.blog .bttn{
+    margin: auto;
+    margin-top: 18px;
+    background-color: rgba(228, 220, 220, 0.904);
+    border: 2px solid rgba(228, 220, 220, 0.904);
+}
+.blog .bttn:hover{
+    background-color:rgb(236, 232, 22) ;
+    border: 2px solid rgb(236, 232, 22);
+    color: black;
+}
+.blog img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: auto;
+    height: 140px;
+}
+
+
+/* Contact Section */
+
+
+#contact-container{
+    width: 100%;
+    height: 640px;
+    /* border: 2px solid rgb(235, 68, 193); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#contact-head h1{
+    /* border: 2px solid brown; */
+    margin-top: 0px;
+    text-align: left;
+    padding: 30px 65px 15px 65px;
+
+    font-family:'Ubuntu', sans-serif ;
+
+}
+
+#contact-box{
+    /* border: 2px solid lightseagreen; */
+    width: 50%;
+    height: 600px;
+    padding-bottom: 34px;
+    background-color:rgba(252, 228, 16, 0.842) ;
+}
+#contact-box form{
+    width: 50%;
+    height: 540px;
+    text-align: left;
+    padding-left: 70px;
+}
+#contact-box .form-group label{
+    font-size: 1.3rem;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+#contact-box input,
+#contact-box textarea{
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border-color:2px solid white;
+    font-size: 1.1rem;
+    margin: 7px 0px 15px 0px;
+    background-color:white;
+    position: relative;
+}
+#form_button{
+    height: 34px;
+    width: 106%;
+    padding: 20px 0px;
+    background-color: rgb(60, 19, 99);
+    color: white;
+    font-size: 15px;
+    /* border: 2px solid rgb(60, 19, 99); */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Ubuntu', sans-serif ;
+}
+#form_button:hover{
+    background-color: rgb(60, 19, 99);
+    border: 2px solid rgb(60, 19, 99);
+    cursor: pointer;
+}
+
+/* Footer of the page */
+
+#footer-left,#footer-center,#footer-right{
+    /* border: 2px solid tomato; */
+    padding: 30px;
+    
+}
+footer .left p{
+    font-family:'Mukta', sans-serif ;
+}
+footer{
+    height: 80px;
+    background: white;
+    color: black;
+    padding: 70px 20px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+footer img{
+    height: 25px;
+    width: 15%;
+    /* border: 2px solid rgb(63, 62, 62); */
+    padding: 3px;
+    margin: 5px 10px;
+}  
+
+/* Utility Classes- for reusing the classes anywhere */
+
+.h-primary{
+    font-size: 50px;  
+    padding: 25px 0px;
+    margin-top: 100px 0px;
+    /* align-items: center; */
+    justify-content: center;
+    font-family:'Ubuntu', sans-serif ;
+}
+.h-secondary{
+    font-size: 15px; 
+    color: rgb(75, 9, 138);
+    padding: 12px;
+    margin-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+#btn-container .btn{
+    padding: 13px 25px;
+    /* color: rgb(253, 252, 252); */
+    margin: 35px 3px ;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+hr{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 330px;
+    color: gray;
+}
+#btn-container .btn:hover{
+    background-color:rgb(100, 11, 117) ;
+    border-color: rgb(100, 11, 117);
+    color: white;
+}
+#bttn-container, .bttn{
+    padding: 9px 30px;
+    margin: 20px 3px ;
+    margin-bottom: 34px;
+    font-family: 'Ubuntu', sans-serif ;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 10px;
+}
+#bttn-container, .bttn:hover{
+    background-color:rgb(100, 11, 117) ;
+    border-color: rgb(100, 11, 117);
+    color: white;
+}
+.center{
+    text-align: center;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 634px;
+    width: 50%;
+    /* border: 2px solid purple; */
+    z-index: -1;
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 0px;
+    width: 100%;
+    /* z-index: -1; */
+}
+
+.gmap_canvas iframe {
+    left: 0;
+
+    top: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    position: absolute;
+
+}
+footer h2{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid skyblue; */
+    margin-left: 0px; 
+    font-size: 20px;
+    /* border: 2px solid rgb(189, 98, 18); */
+    padding: 23px ;
+}
